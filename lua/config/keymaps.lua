@@ -7,6 +7,11 @@ vim.g.mapleader = " "
 map("n", "<leader>w", ":w<CR>",  {silent = true})
 map("n", "<leader>q", ":q<CR>",  {silent = true})
 
+-- clist
+map("n", "<leader><C-j>", ":cnext<CR>", {silent = true})
+map("n", "<leader><C-k>", ":cprev<CR>", {silent = true})
+map("n", "<leader>c", ":cw<CR>", {silent = true})
+
 -- moving
 map("n", "J", "mzJ`z")
 
@@ -15,3 +20,4 @@ map("n", "J", "mzJ`z")
 
 -- neo-tree
 map("n", "<leader>e", ":Neotree toggle<CR>", {silent = true})
+
