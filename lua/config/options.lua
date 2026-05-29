@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+-- opt.clipboard:append('unnamedplus,unnamed')
+
 opt.belloff = "all"
 opt.hidden = true
 
@@ -14,7 +16,7 @@ opt.expandtab = true
 opt.softtabstop = 4
 
 -- grep setting
-opt.grepprg="rg --vimgrep"
+opt.grepprg = "rg --vimgrep"
 
 -- color
 opt.termguicolors = true
