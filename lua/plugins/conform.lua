@@ -20,7 +20,6 @@ return {
 		-- Define your formatters
 		formatters_by_ft = {
 			lua = { "stylua" },
-			zsh = { "beautysh" },
 			python = { "isort", "ruff" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
 		},
