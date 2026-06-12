@@ -1,13 +1,14 @@
 return {
 	"https://github.com/akinsho/toggleterm.nvim",
 	version = "*",
-	opts = {
-		direction = "horizontal",
-		insert_mappings = false,
-		terminal_mappings = false,
-		open_mapping = { [[<c-\>]], [[<c-¥>]] },
-	},
 	config = function()
+		require("toggleterm").setup({
+			direction = "horizontal",
+			insert_mappings = false,
+			terminal_mappings = false,
+			open_mapping = { [[<c-\>]], [[<c-¥>]] },
+		})
+
 		local Terminal = require("toggleterm.terminal").Terminal
 		local lazygit = Terminal:new({
 			cmd = "lazygit",
