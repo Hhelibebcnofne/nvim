@@ -11,8 +11,9 @@ return {
 			bash = { "shellcheck" },
 			sh = { "shellcheck" },
 			lua = { "luacheck" },
+			markdown = { "cspell" },
 		}
-		vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
+		vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
 			callback = function()
 				lint.try_lint()
 			end,
