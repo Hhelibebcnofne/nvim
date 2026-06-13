@@ -41,3 +41,5 @@ vim.g.netrw_winsize = 25
 -- search
 opt.ignorecase = true
 opt.smartcase = true
+
+opt.laststatus = 3
