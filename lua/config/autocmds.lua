@@ -3,6 +3,7 @@ local augroup = vim.api.nvim_create_augroup
 
 local group = augroup("auto_mkdir", {})
 
+-- https://vim-jp.org/vim-users-jp/2011/02/20/Hack-202.html
 autocmd("BufWritePre", {
 	group = group,
 	pattern = "*",
