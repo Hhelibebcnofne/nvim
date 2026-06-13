@@ -3,4 +3,8 @@ local nvim_command = vim.api.nvim_command
 
 user_command("RunCpp", function()
 	vim.cmd("!g++ -O3 % -o %< && %<")
-end, {})
+end, { desc = "Compile and run opening cpp file" })
+
+user_command("InitLua", function()
+	vim.cmd.edit(vim.fn.stdpath("config") .. "/init.lua")
+end, { desc = "Open init.lua" })
