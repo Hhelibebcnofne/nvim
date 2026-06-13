@@ -3,6 +3,12 @@ local map = vim.keymap.set
 -- スペースをリーダーキーに
 vim.g.mapleader = " "
 
+-- close buffer
+vim.keymap.set("n", "<leader>bd", function()
+	vim.cmd("bprevious")
+	vim.cmd("bdelete #")
+end)
+
 -- leader save
 map("n", "<leader>w", ":w<CR>", { silent = true })
 map("n", "<leader>q", ":q<CR>", { silent = true })
