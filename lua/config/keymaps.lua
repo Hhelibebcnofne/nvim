@@ -36,3 +36,11 @@ map("n", "<leader>ya", 'mmgg"+yG`m', { silent = true })
 map("n", "<leader>qr", function()
 	vim.api.nvim_command("restart")
 end, {})
+
+-- emacs like movement in commandline
+vim.keymap.set("c", "<c-b>", "<left>", { desc = "Emacs like left" })
+vim.keymap.set("c", "<c-f>", "<right>", { desc = "Emacs like right" })
+vim.keymap.set("c", "<c-a>", "<home>", { desc = "Emacs like home" })
+vim.keymap.set("c", "<c-e>", "<end>", { desc = "Emacs like end" })
+vim.keymap.set("c", "<c-h>", "<bs>", { desc = "Emacs like bs" })
+vim.keymap.set("c", "<c-d>", "<del>", { desc = "Emacs like del" })
