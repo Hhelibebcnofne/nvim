@@ -4,10 +4,10 @@ local map = vim.keymap.set
 vim.g.mapleader = " "
 
 -- close buffer
-vim.keymap.set("n", "<leader>bd", function()
-	vim.cmd("bprevious")
-	vim.cmd("bdelete #")
-end)
+-- map("n", "<leader>bd", function()
+-- 	vim.cmd("bprevious")
+-- 	vim.cmd("bdelete #")
+-- end)
 
 -- leader save
 map("n", "<leader>w", ":w<CR>", { silent = true })
