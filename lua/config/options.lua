@@ -43,3 +43,16 @@ opt.ignorecase = true
 opt.smartcase = true
 
 opt.laststatus = 3
+
+-- use rg for external-grep
+opt.grepprg = table.concat({
+	"rg",
+	"--vimgrep",
+	"--trim",
+	"--hidden",
+	[[--glob='!.git']],
+	[[--glob='!*.lock']],
+	[[--glob='!*-lock.json']],
+	[[--glob='!*generated*']],
+}, " ")
+opt.grepformat = "%f:%l:%c:%m"
