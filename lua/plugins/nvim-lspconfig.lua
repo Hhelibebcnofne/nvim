@@ -1,3 +1,4 @@
+-- @type LazyPluginSpec
 return {
 	"https://github.com/neovim/nvim-lspconfig",
 	event = { "BufNewFile", "BufReadPre" },
