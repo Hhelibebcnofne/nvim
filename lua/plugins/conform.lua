@@ -12,6 +12,22 @@ return {
 			mode = "",
 			desc = "Format buffer",
 		},
+		{
+			"<leader>ft",
+			function()
+				vim.g.autoformat = not vim.g.autoformat
+				vim.notify("Global autoformat: " .. tostring(vim.g.autoformat))
+			end,
+			desc = "Toggle global autoformat",
+		},
+		{
+			"<leader>fT",
+			function()
+				vim.b.autoformat = not vim.b.autoformat
+				vim.notify("Buffer autoformat: " .. tostring(vim.b.autoformat))
+			end,
+			desc = "Toggle buffer autoformat",
+		},
 	},
 	-- This will provide type hinting with LuaLS
 	---@module "conform"
@@ -28,7 +44,20 @@ return {
 			lsp_format = "fallback",
 		},
 		-- Set up format-on-save
-		format_on_save = { timeout_ms = 500 },
+        format_on_save = function(bufnr)
+            if vim.g.autoformat == false then
+                return
+            end
+
+            if vim.b[bufnr].autoformat == false then
+                return
+            end
+
+            return {
+                timeout_ms = 500,
+                lsp_format = "fallback",
+            }
+        end,
 		-- Customize formatters
 		formatters = {
 			shfmt = {
@@ -37,6 +66,7 @@ return {
 		},
 	},
 	init = function()
+        vim.g.autoformat = true
 		-- If you want the formatexpr, here is the place to set it
 		vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 	end,
