@@ -60,7 +60,14 @@ return {
 	opts = {
 		legacy_commands = false, -- this will be removed in 4.0.0
 		workspaces = {
-			{ name = "personal", path = "~/vaults/personal" },
+			{
+				name = "personal",
+				path = "~/vaults/personal",
+				overrides = {
+					-- プロジェクトルート配下のnotesディレクトリ内に作成する
+					notes_subdir = "notes",
+				},
+			},
 		},
 		daily_notes = {
 			folder = "diary",
@@ -73,9 +80,6 @@ return {
 				return tostring(os.time())
 			end
 		end,
-		note_path_func = function(spec)
-			local current_dir = vim.fn.expand("%:p:h")
-			return require("plenary.path"):new(current_dir) / (spec.id .. ".md")
-		end,
+		new_notes_location = "notes_subdir",
 	},
 }
