@@ -61,8 +61,8 @@ return {
 		legacy_commands = false, -- this will be removed in 4.0.0
 		workspaces = {
 			{
-				name = "personal",
-				path = "~/vaults/personal",
+				name = "Personal",
+				path = "~/vaults/Personal",
 				overrides = {
 					-- プロジェクトルート配下のnotesディレクトリ内に作成する
 					notes_subdir = "notes",
@@ -71,7 +71,7 @@ return {
 		},
 		daily_notes = {
 			folder = "daily",
-			template = "~/vaults/personal/daily/template.md",
+			template = "~/vaults/Personal/daily/template.md",
 		},
 		note_id_func = function(title)
 			if title ~= nil then
@@ -81,5 +81,9 @@ return {
 			end
 		end,
 		new_notes_location = "notes_subdir",
+		sync = {
+			enabled = true,
+			configs = {}, -- .obsidian/*.json を同期しない
+		},
 	},
 }
