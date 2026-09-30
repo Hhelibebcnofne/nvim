@@ -70,8 +70,8 @@ return {
 			},
 		},
 		daily_notes = {
-			folder = "diary",
-			template = "~/vaults/personal/diary/template.md",
+			folder = "daily",
+			template = "~/vaults/personal/daily/template.md",
 		},
 		note_id_func = function(title)
 			if title ~= nil then
